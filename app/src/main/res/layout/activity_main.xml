@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="org.trimensions.googlevrvideovidget.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_layout"
+        android:padding="10dip"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" >
+            <com.google.vr.sdk.widgets.video.VrVideoView
+                android:id="@+id/video_view"
+                android:layout_width="match_parent"
+                android:scrollbars="@null"
+                android:layout_height="250dip"/>
+            <ImageView
+                android:id = "@+id/playButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dip"
+                android:background="@drawable/playbutton"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <ImageButton
+                android:background="@android:color/transparent"
+                android:id="@+id/play_toggle"
+                android:paddingTop="4dp"
+                android:paddingStart="0dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/play_on" />
+            <!-- Seeking UI & progress indicator.-->
+            <SeekBar
+                android:id="@+id/seek_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_height="32dp"
+                android:layout_weight="8"
+                android:layout_width="0dp"/>
+            <ImageButton
+                android:background="@android:color/transparent"
+                android:id="@+id/volume_toggle"
+                android:paddingTop="4dp"
+                android:paddingStart="0dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/volume_on"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            tools:text="Google VR Tutorial app by Trimensions.org"
+            android:autoLink="web"
+            android:text="Google VR Tutorial app by Trimensions.org"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+</RelativeLayout>
